@@ -1,5 +1,7 @@
 # lexer
 
 Sameera Yayavaram
-Jonathan Chau
+
+Joseph Chau
+
 Wendy Ji
