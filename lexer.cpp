@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "token.h"
+#include "lexer.h"
 #include <set>
 
 token::token()
