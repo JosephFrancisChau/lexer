@@ -1,2 +1,5 @@
 # lexer
-sldhflasjdf;adf
+
+Sameera Yayavaram
+Jonathan Chau
+Wendy Ji
