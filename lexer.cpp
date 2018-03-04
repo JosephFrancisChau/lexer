@@ -1,15 +1,18 @@
 #include "stdafx.h"
 #include "lexer.h"
 #include <set>
-// testing this code
+
+// constructor
 token::token()
 {
 }
 
+// destroyer
 token::~token()
 {
 }
 
+// function used to determine the type of token
 bool token::isToken(const string word)
 {
 	if (isID(word)) {
@@ -46,6 +49,7 @@ void token::printToken(const string word) {
 
 }
 
+// function to determine if string is an identifier
 bool token::isID(const string word) {
 	//check the first char
 	if (!(word[0] >= 'a'&&word[0] <= 'z' || word[0] >= 'A'&&word[0] <= 'Z'))
@@ -73,6 +77,7 @@ bool token::isID(const string word) {
 	return true;
 }
 
+// function to determine if string is a keyword
 bool token::isKeyword(const string word) {
 	set<string> keywords = { "function", "int", "boolean", "real", "if", "else", "elseif","endif","return", "put","get","while","true","false" };
 	set<string>::iterator it = keywords.find(word);
@@ -81,6 +86,7 @@ bool token::isKeyword(const string word) {
 	return true;
 }
 
+// function to determine if string is an integer
 bool token::isInteger(string word) {
 	for (size_t i = 0; i < word.length(); ++i) {
 		if (!(word[i] >= '0'&&word[i] <= '9'))
@@ -91,6 +97,7 @@ bool token::isInteger(string word) {
 	return true;
 }
 
+// function to determine if string is a real
 bool token::isReal(string word) {
 	if (word.length() < 3)
 		return false;
@@ -115,6 +122,7 @@ bool token::isReal(string word) {
 	return true;
 }
 
+// function to determine if string is an operator
 bool token::isOperator(string word) {
 	set<string> operators = { "+","-",".","*","/","%","=" };
 	set<string>::iterator it = operators.find(word);
@@ -123,6 +131,7 @@ bool token::isOperator(string word) {
 	return true;
 }
 
+// function to determine if string is a separator
 bool token::isSeparator(string word) {
 	set<string> separators = { "(",")" };
 	set<string>::iterator it = separators.find(word);
