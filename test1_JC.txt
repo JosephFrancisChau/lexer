@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+if (x23 > y$) account = true
+=======
+while  (fahr < upper)   a = 23.00
+>>>>>>> 415f2bf6856a2617b51dd7351f14fe8252252607

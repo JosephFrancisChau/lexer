@@ -1,0 +1,38 @@
+<<<<<<< HEAD
+function convert$ [fahr:int]
+{
+	return 5 * (fair -32)/9;
+}
+
+%%
+	int one, two, three;
+	
+	get(one);
+	put(two);
+	three = one + two;
+	
+	while(one < three)
+	{
+		two=2*2;
+		three=3*3;
+		one=one + 1;
+	}
+=======
+! this is comment for this sample code which
+   converts  Fahrenheit into Celcius !
+
+function convert$ [fahr:int]
+{
+           return 5 * (fahr -32) / 9;
+}
+
+%%
+     int    low,  high, step$;      ! declarations !
+
+     get (low, high, step$);
+     while (low  <  high )  
+         {  put (low);
+             put (convert$ (low));
+             low =  low  +  step$;
+         } 
+>>>>>>> 415f2bf6856a2617b51dd7351f14fe8252252607
