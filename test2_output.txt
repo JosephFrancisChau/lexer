@@ -1,0 +1,50 @@
+Source Code:
+
+function convert$ [fahr:int]
+{
+	return 5 * (fair -32)/9;
+}
+
+%%
+	int one, two, three;
+	
+	get(one);
+	put(two);
+	three = one + two;
+	
+	while(one < three)
+	{
+		two=2*2;
+		three=3*3;
+		one=one + 1;
+	}
+
+Output:
+
+Token     	Lexeme
+
+keyword   	function
+identifer 	convert$
+separator 	[
+identifer 	fahr:int
+separator 	]
+separator 	{
+keyword   	return
+operator  	*
+separator 	(
+identifer 	fair
+separator 	}
+separator 	%%
+keyword   	int
+identifer 	three
+operator  	=
+identifer 	one
+operator  	+
+identifer 	while(one
+operator  	<
+identifer 	three
+separator 	)
+separator 	{
+identifer 	one=one
+operator  	+
+separator 	}
