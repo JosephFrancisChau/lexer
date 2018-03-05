@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "lexer.h"
 #include <fstream>
 #include <iomanip>  //setw

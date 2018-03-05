@@ -1,0 +1,8 @@
+!test case 3 : fail case!
+
+int a123, a456b;
+
+a123=0;
+a456b = 2;
+
+return 0;
