@@ -1,4 +1,3 @@
-#include "stdafx.h"
 //#include "lexer.h"
 #include <iostream>
 #include <map>
@@ -59,7 +58,6 @@ int main() {
 	coutfile << left << setw(10) << "Token" << "\t" << "Lexeme" << endl << endl;
 	readFile(name);
 	coutfile.close();
-	system("pause");
 	return 0;
 }
 
