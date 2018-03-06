@@ -313,34 +313,41 @@ void testSeparator(string& word) {
 			it2 = operators.find(temp);
 			if (it1 != separators.end()) {
 				isSep = true;
-				iSep = i;				
+				iSep = i;
 			}
 			if (it2 != operators.end()) {
 				isOpe = true;
-				iOpe = i;				
+				iOpe = i;	
+			}
+			break;
+		}
+
+		if (isSep || isOpe) {
+			if (isSep) {
+				sub1 = word.substr(0, iSep);
+				sub2 = word.substr(iSep);
+				if (sub1.length() > 0) {
+					lexer(sub1);
+				}
+				if (sub2.length() > 0) {
+					return testSeparator(sub2);
+				}
+			}
+			else {
+				sub1 = word.substr(0, iOpe);
+				sub2 = word.substr(iOpe);
+				if (sub1.length() > 0) {
+					lexer(sub1);
+				}
+				if (sub2.length() > 0) {
+					return testSeparator(sub2);
+				}
 			}
 		}
-		if (isSep) {
-			sub1 = word.substr(0, iSep);
-			sub2 = word.substr(iSep);
-			if(sub1.length()>0)
-			lexer(sub1);
-			if (sub2.length()>0)
-			lexer(sub2);
-			sub1.clear();
-			sub2.clear();
+		else {
+			lexer(word);
 		}
-		if (isOpe) {
-			sub1 = word.substr(0, iOpe);
-			sub2 = word.substr(iOpe);
-			if (sub1.length()>0)
-			lexer(sub1);
-			if (sub2.length()>0)
-			lexer(sub2);
-			sub1.clear();
-			sub2.clear();
-		}
-		lexer(word);
+		
 	}
 	return;
 }
