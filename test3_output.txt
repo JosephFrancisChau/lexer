@@ -1,0 +1,31 @@
+Source Code:
+
+!test case 3 : fail case!
+
+int a123, a456b;
+
+a123=0;
+a456b = 2;
+
+return 0;
+
+Output:
+
+Token     	Lexeme
+
+separator 	!
+separator 	!
+keyword   	int
+separator 	,
+identifer 	a456b
+separator 	;
+operator  	=
+integer   	0
+separator 	;
+identifer 	a456b
+operator  	=
+integer   	2
+separator 	;
+keyword   	return
+integer   	0
+separator 	;
