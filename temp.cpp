@@ -30,7 +30,7 @@ bool isID = false;
 void lexer(string& word);
 void printToken(string& type, string& value);
 void helper(string word1, string word2);
-void helper2(string word1, string word2, string word3);
+//void helper2(string word1, string word2, string word3);
 ofstream coutfile;
 
 void readFile(const string& filename);
@@ -302,38 +302,45 @@ void helper(string word1, string word2) {
 void testSeparator(string& word) {
 	set<string>::iterator it1;
 	set<string>::iterator it2;
-	size_t len = word.length();
+	size_t len = word.length(), iSep, iOpe;
 	string sub1, sub2;
+	bool isSep = false;
+	bool isOpe = false;
 	if (!word.empty()) {
 		for (size_t i = 0; i < len; ++i) {
-			string temp = word[i] + "";
+			string temp = word.substr(i,1);
 			it1 = separators.find(temp);
 			it2 = operators.find(temp);
 			if (it1 != separators.end()) {
-				sub1 = word.substr(0, i);
-				sub2 = word.substr(i);
-				if(sub1.length()>0)
-					lexer(sub1);
-				if (sub2.length()>0)
-					lexer(sub2);
-				sub1.clear();
-				sub2.clear();
+				isSep = true;
+				iSep = i;				
 			}
-			else if (it2 != operators.end()) {
-				sub1 = word.substr(0, i);
-				sub2 = word.substr(i);
-				if (sub1.length()>0)
-					lexer(sub1);
-				if (sub2.length()>0)
-					lexer(sub2);
-				sub1.clear();
-				sub2.clear();
-			}
-			else {
-				lexer(word);
-				return;
+			if (it2 != operators.end()) {
+				isOpe = true;
+				iOpe = i;				
 			}
 		}
+		if (isSep) {
+			sub1 = word.substr(0, iSep);
+			sub2 = word.substr(iSep);
+			if(sub1.length()>0)
+			lexer(sub1);
+			if (sub2.length()>0)
+			lexer(sub2);
+			sub1.clear();
+			sub2.clear();
+		}
+		if (isOpe) {
+			sub1 = word.substr(0, iOpe);
+			sub2 = word.substr(iOpe);
+			if (sub1.length()>0)
+			lexer(sub1);
+			if (sub2.length()>0)
+			lexer(sub2);
+			sub1.clear();
+			sub2.clear();
+		}
+		lexer(word);
 	}
 	return;
 }
